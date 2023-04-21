@@ -1,0 +1,126 @@
+/**Général**/
+ion-app {
+    --ion-font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+ion-col {
+    text-align: center;
+}
+
+ion-button {
+    font-size: 1em;
+}
+
+/**Colonne joueurs**/
+.players-name {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.global-score-players {
+    color: #B22222;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+
+.current-number{
+    background-color: #B22222;
+    padding: 5px 0 5px 0;
+    font-size: 1em;
+}
+
+.current-score{
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/**Icônes**/
+ion-icon {
+    color: #B22222;
+    padding-right: 0.5em;
+}
+
+/**Dé**/
+
+.dice {
+    box-shadow: 0px 0px 20px 0px #a1a1a1;
+    height: 130px;
+    width: 130px;
+    margin: 15px auto 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dot {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #B22222;
+    animation: 300ms ease-out 0s 1 growAndAppear; 
+}
+
+.first-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-face,
+.third-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-face .dot:nth-child(2) {
+    align-self: flex-end;
+}
+
+.third-face .dot:nth-child(2) {
+    align-self: center;
+}
+.third-face .dot:nth-child(3) {
+    align-self: flex-end;
+}
+
+.fourth-face,
+.column,
+.fifth-face {
+    display: flex;
+    justify-content: space-between;
+}
+.column {
+    flex-direction: column;
+}
+
+.fifth-face .column:nth-of-type(2) {
+    justify-content: center;
+}
+
+/**Indiquer à qui c'est de jouer**/
+.player-turn {
+    background-color: #B22222;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+.current-player-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-1-turn {
+    background: linear-gradient(180deg, #ded7d7 50%, #fff 50%);
+}
+.player-2-turn {
+    background: linear-gradient(0deg, #ded7d7 50%, #fff 50%);
+}
