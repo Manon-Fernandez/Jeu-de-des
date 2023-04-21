@@ -5,9 +5,139 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Ajout CDN Ionic-->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+        <!--Ajout Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+        <!--Ajout CSS-->
+        <link href="CSS/styles.css" rel="stylesheet">
         <title>Jeu de dés</title>
     </head>
 
 <!--Début body-->
-    <body></body>
+    <body>
+
+        <ion-app>
+            <ion-content fullscreen>
+                <ion-grid id="turnColor">
+
+                    <!--Bouton nouvelle partie-->
+                    <ion-row>
+                        <ion-col size="12">
+                            <ion-button id="newGame" fill="clear" color="dark">
+                                <ion-icon name="add-circle-outline"></ion-icon>
+                                <ion-label>New game</ion-label>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+
+                    <!--Colonne joueur 1-->
+                    <ion-row>
+                        <ion-col size="12" size-lg="4">
+                            <ion-row>
+                                <ion-col class="current-player-display" size="12">
+                                    <p id="playerName1" class="players-name">Player 1</p>
+                                    <span id="playerTurn1"></span>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <p id="globalScorePlayer1" class="global-score-players">
+                                        0
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <section class="current-number">
+                                        <p>Current</p>
+                                        <p id="currentScorePlayer1" class="current-score">
+                                            0
+                                        </p>
+                                    </section>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+
+                        <!--Colonne dé-->
+                        <ion-col size="12" size-lg="4">
+                            <ion-row>
+                                <ion-col id="diceFace" size="12">
+                                    <div class="dice fourth-face">
+                                        <div class="column">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                        <div class="column">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+
+                            <!--Bouton lancer le dé-->
+                            <ion-row>
+                                <ion-col>
+                                    <ion-row>
+                                        <ion-col size="12">
+                                            <ion-button id="throw-dice" fill="clear" color="dark">
+                                                <ion-icon name="reload-outline" class="center-buttons"></ion-icon>
+                                                <ion-label>Roll dice</ion-label>
+                                            </ion-button>
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <!--Bouton sauvegarder les points-->
+                                    <ion-row>
+                                        <ion-col size="12">
+                                            <ion-button fill="clear" color="dark">
+                                                <ion-icon name="download-outline" class="center-buttons"></ion-icon>
+                                                <ion-label>Hold</ion-label>
+                                            </ion-button>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+
+                        <!--Colonne joueur 2-->
+                        <ion-col size="12" size-lg="4">
+                            <ion-row>
+                                <ion-col class="current-player-display" size="12">
+                                    <p id="playerName2" class="players-name">Player 2</p>
+                                    <span id="playerTurn2"></span>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <p id="globalScorePlayer2" class="global-score-players">
+                                        0
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <section class="current-number">
+                                        <p>Current</p>
+                                        <p id="currentScorePlayer2" class="current-score">
+                                            0
+                                        </p>
+                                    </section>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
+            </ion-content>
+        </ion-app>
+
+    </body>
 </html>
