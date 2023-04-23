@@ -17,3 +17,21 @@ let player2 = {
     globalScore: currentScorePlayer2,
     winner: false,
 };
+
+/**Initialisation de la nouvelle partie */
+const startNewGame = () => {
+    playerName1.innerHTML = prompt('Choisissez le nom du premier joueur (8 caractères maximum)').slice(0, 8);
+    playerName2.innerHTML = prompt('Choisissez le nom du second joueur (8 caractères maximum)').slice(0, 8);
+    playerActive = player1;
+    playerTurn1.classList.add('player-turn');
+    turnColor.classList.add('player-1-turn');
+    inGame = true;
+    currentScorePlayer1.textContent = 0;
+    currentScorePlayer2.textContent = 0;
+    globalScorePlayer1.textContent = 0;
+    globalScorePlayer2.textContent = 0;
+    player1.winner = false;
+    player2.winner = false;
+};
+
+newGameButton.addEventListener('click', startNewGame);
