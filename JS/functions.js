@@ -53,3 +53,21 @@ const throwTheDice = () => {
 };
 
 rollDice.addEventListener('click', throwTheDice);
+
+/**Sauvegarde du score */
+const holdButton = () => {
+    if (inGame) {
+        playerActive.globalScore.textContent = currentScore + Number(playerActive.globalScore.textContent);
+        if (playerActive.globalScore.textContent >=100) {
+            playerActive.winner = true;
+            alert (`${playerActive.name.textContent} a gagné !`);
+            inGame = false;
+        } else {
+            currentScore = 0;
+            playerActive.currentScore.textContent = currentScore;
+            nextPlayer();
+        }
+    }
+};
+
+holdScore.addEventListener('click', holdButton);
