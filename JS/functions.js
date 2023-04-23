@@ -14,14 +14,14 @@ let player1 = {
 let player2 = {
     name: playerName2,
     currentScore: currentScorePlayer2,
-    globalScore: currentScorePlayer2,
+    globalScore: globalScorePlayer2,
     winner: false,
 };
 
 /**Initialisation de la nouvelle partie */
 const startNewGame = () => {
-    playerName1.innerHTML = prompt('Choisissez le nom du premier joueur (8 caractères maximum)').slice(0, 8);
-    playerName2.innerHTML = prompt('Choisissez le nom du second joueur (8 caractères maximum)').slice(0, 8);
+    playerName1.innerHTML = prompt('Choisissez le nom du premier joueur (8 caractères maximum sinon il sera coupé)').slice(0, 8);
+    playerName2.innerHTML = prompt('Choisissez le nom du second joueur (8 caractères maximum sinon il sera coupé)').slice(0, 8);
     playerActive = player1;
     playerTurn1.classList.add('player-turn');
     turnColor.classList.add('player-1-turn');
@@ -71,3 +71,20 @@ const holdButton = () => {
 };
 
 holdScore.addEventListener('click', holdButton);
+
+/**Changement de joueur */
+const nextPlayer = () => {
+    if (playerActive === player1) {
+        playerActive = player2;
+        playerTurn2.classList.add('player-turn');
+        playerTurn1.classList.remove('player-turn');
+        turnColor.classList.add('player-2-turn');
+        turnColor.classList.remove('player-1-turn');
+    } else {
+        playerActive = player1;
+        playerTurn1.classList.add('player-turn');
+        playerTurn2.classList.remove('player-turn');
+        turnColor.classList.add('player-1-turn');
+        turnColor.classList.remove('player-2-turn');
+    }
+};
