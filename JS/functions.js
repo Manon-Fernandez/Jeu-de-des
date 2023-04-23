@@ -35,3 +35,21 @@ const startNewGame = () => {
 };
 
 newGameButton.addEventListener('click', startNewGame);
+
+/**Lancé de dé */
+const throwTheDice = () => {
+    if (inGame) {
+        let randomNumber = Math.floor(Math.random() * 6) + 1;
+        diceFace.innerHTML = sixDiceFaces[randomNumber -1];
+        if (randomNumber !== 1) {
+            currentScore += randomNumber;
+            playerActive.currentScore.textContent = currentScore;
+        } else {
+            currentScore = 0;
+            playerActive.currentScore.textContent = currentScore;
+            nextPlayer();
+        }
+    }
+};
+
+rollDice.addEventListener('click', throwTheDice);
